@@ -15,13 +15,19 @@ namespace SimpleMenu
             Console.WriteLine("6 - Expresso");
             Console.WriteLine("Q - Quit the program ");
             char userChoice = ' ';
+
             //while (!userChoice.Equals('q'))
             while (!(userChoice.Equals('q') || userChoice.Equals('Q')))
             {
                 userChoice = Console.ReadKey(true).KeyChar;
-                if (userChoice != null)
+                int userChoiceConverted = Int16.Parse($"{userChoice}");
+                if ((userChoiceConverted < 7) && (userChoiceConverted > 0))
                 {
-                    Console.WriteLine("You chose " + userChoice);
+                    Console.WriteLine("You chose " + userChoiceConverted);
+                }
+                else
+                {
+                    Console.WriteLine($"Your selection #{userChoiceConverted} is not on the menu");
                 }
             }
         }
