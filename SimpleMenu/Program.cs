@@ -14,20 +14,16 @@ namespace SimpleMenu
             Console.WriteLine("5 - Macchiato");
             Console.WriteLine("6 - Expresso");
             Console.WriteLine("Q - Quit the program ");
-
-            ConsoleKeyInfo userChoice = Console.ReadKey(true);
-            if (userChoice != null)
-            { 
-                Console.WriteLine("You chose " + userChoice);
+            char userChoice = ' ';
+            //while (!userChoice.Equals('q'))
+            while (!(userChoice.Equals('q') || userChoice.Equals('Q')))
+            {
+                userChoice = Console.ReadKey(true).KeyChar;
+                if (userChoice != null)
+                {
+                    Console.WriteLine("You chose " + userChoice);
+                }
             }
-            var x = userChoice.Key;
-            char y = userChoice.KeyChar;
-            var z = userChoice.Modifiers;
-            Console.WriteLine("Key: " + x);
-            Console.WriteLine("KeyChar: " + y);
-            Console.WriteLine("Modifiers: " + z);
-
-
         }
     }
 }
